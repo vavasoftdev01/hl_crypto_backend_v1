@@ -178,8 +178,8 @@ export class BinanceService implements OnModuleInit, OnModuleDestroy {
       symbol: symbol,
     };
 
-    //this.logger.log(`Emitting price update from handleTradeData: ${JSON.stringify(this.tradeData)}`); TODO: env based logger
-    //this.priceEmitter.emit('priceUpdate', { symbol, price, quantity, timestamp });
+    //this.logger.log(`Emitting price update from handleTradeData: ${JSON.stringify(this.tradeData)}`);
+    this.priceEmitter.emit('priceUpdate', { symbol, price, quantity, timestamp });
   }
 
   private reconnect() {
@@ -235,7 +235,7 @@ export class BinanceService implements OnModuleInit, OnModuleDestroy {
   }
 
   onPriceUpdate(callback: (data: { symbol: string; price: string; quantity: string; timestamp: Date }) => void) {
-    //this.priceEmitter.on('priceUpdate', callback);
+    this.priceEmitter.on('priceUpdate', callback);
   }
 
   onTradeUpdate(callback: (data: { time: number; value: number }) => void) {
