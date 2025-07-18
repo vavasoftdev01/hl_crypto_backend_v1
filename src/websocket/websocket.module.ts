@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { EventEmitterModule } from '@nestjs/event-emitter';
-import { BinanceModule } from 'src/binance/binance.module';
+//import { BinanceModule } from 'src/binance/binance.module';
 
 /**
  * All Websocket related modules should be registered here.
@@ -15,7 +15,7 @@ import { BinanceModule } from 'src/binance/binance.module';
             // disable throwing uncaughtException if an error event is emitted and it has no listeners
             ignoreErrors: false,
         }),
-        BinanceModule
+        //BinanceModule
     ],
     providers: [],
     controllers: []

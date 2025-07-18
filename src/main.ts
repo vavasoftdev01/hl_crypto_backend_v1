@@ -22,12 +22,12 @@ async function bootstrap() {
   await app.listen(apiPort);
 
   // WebSocket Instance
-  const wsApp = await NestFactory.create(WebsocketModule);
-  wsApp.useWebSocketAdapter(new IoAdapter(wsApp));
-  const wsPort = +process.env.WS_PORT;
-  await wsApp.listen(wsPort);
+  // const wsApp = await NestFactory.create(WebsocketModule);
+  // wsApp.useWebSocketAdapter(new IoAdapter(wsApp));
+  // const wsPort = +process.env.WS_PORT;
+  // await wsApp.listen(wsPort);
 
-  console.log(`REST server running on port ${apiPort}, WebSocket server running on port ${wsPort}`);
+  console.log(`Server running on port ${apiPort}`);
 }
 
 bootstrap();
